@@ -1,0 +1,23 @@
+{
+  "name": "edx",
+  "version": "1.0.0-beta",
+  "description": "edx.js",
+  "main": "./packages/edx/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EDXFund/edx.js.git"
+  },
+  "keywords": [
+    "edx",
+    "js"
+  ],
+  "author": "fx",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/EDXFund/edx.js/issues"
+  },
+  "homepage": "https://github.com/EDXFund/edx.js#readme"
+}
