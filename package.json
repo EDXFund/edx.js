@@ -19,5 +19,20 @@
   "bugs": {
     "url": "https://github.com/EDXFund/edx.js/issues"
   },
-  "homepage": "https://github.com/EDXFund/edx.js#readme"
+  "homepage": "https://github.com/EDXFund/edx.js#readme",
+  "dependencies": {
+    "web3-core": "^1.0.0-beta.36",
+    "web3-core-helpers": "^1.0.0-beta.36",
+    "web3-core-method": "^1.0.0-beta.36",
+    "web3-core-requestmanager": "^1.0.0-beta.36",
+    "web3-core-subscriptions": "^1.0.0-beta.36",
+    "web3-net": "^1.0.0-beta.36",
+    "web3-providers-http": "^1.0.0-beta.36",
+    "web3-providers-ipc": "^1.0.0-beta.36",
+    "web3-providers-ws": "^1.0.0-beta.36",
+    "web3-utils": "^1.0.0-beta.36"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
 }

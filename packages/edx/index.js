@@ -1,11 +1,9 @@
 "use strict";
 
-
-var version = require('../package.json').version;
+var version = require('../../package.json').version;
 var core = require('web3-core');
-var MC = require('../dex-mc');
+var MC = require('../edx-mc');
 var Net = require('web3-net');
-
 var utils = require('web3-utils');
 
 var edx = function edx() {
@@ -17,15 +15,14 @@ var edx = function edx() {
     this.version = version;
     this.utils = utils;
 
-    this.main = new Eth(this);
-
+    this.main = new MC(this);
 
     // overwrite package setProvider
     var setProvider = this.setProvider;
     this.setProvider = function (provider, net) {
         setProvider.apply(_this, arguments);
 
-        this.eth.setProvider(provider, net);
+        this.main.setProvider(provider, net);
 
         return true;
     };

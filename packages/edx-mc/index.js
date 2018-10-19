@@ -1,4 +1,3 @@
-
 "use strict";
 
 var _ = require('underscore');
@@ -8,8 +7,6 @@ var Subscriptions = require('web3-core-subscriptions').subscriptions;
 var Method = require('web3-core-method');
 var utils = require('web3-utils');
 var Net = require('web3-net');
-
-
 
 var getNetworkType = require('./getNetworkType.js');
 var formatter = helpers.formatters;
@@ -239,7 +236,6 @@ var MC = function MC() {
             params: 2,
             inputFormatter: [formatter.inputBlockNumberFormatter, utils.numberToHex],
             outputFormatter: formatter.outputBlockFormatter,
-
         }),
         new Method({
             name: 'getBlockTransactionCount',
