@@ -50,7 +50,6 @@ var MC = function MC() {
     var defaultAccount = null;
     var defaultBlock = 'latest';
 
-/*
     Object.defineProperty(this, 'defaultAccount', {
         get: function () {
             return defaultAccount;
@@ -61,7 +60,7 @@ var MC = function MC() {
             }
 
             // also set on the Contract object
-            _this.Contract.defaultAccount = defaultAccount;
+            // _this.Contract.defaultAccount = defaultAccount;
             _this.personal.defaultAccount = defaultAccount;
 
             // update defaultBlock
@@ -80,7 +79,7 @@ var MC = function MC() {
         set: function (val) {
             defaultBlock = val;
             // also set on the Contract object
-            _this.Contract.defaultBlock = defaultBlock;
+            // _this.Contract.defaultBlock = defaultBlock;
             _this.personal.defaultBlock = defaultBlock;
 
             // update defaultBlock
@@ -93,8 +92,6 @@ var MC = function MC() {
         enumerable: true
     });
 
-
-
     this.clearSubscriptions = _this._requestManager.clearSubscriptions;
 
     // add net
@@ -102,58 +99,6 @@ var MC = function MC() {
     // add chain detection
     this.net.getNetworkType = getNetworkType.bind(this);
 
-    // add accounts
-    this.accounts = new Accounts(this.currentProvider);
-
-    // add personal
-    this.personal = new Personal(this.currentProvider);
-    this.personal.defaultAccount = this.defaultAccount;
-
-    // create a proxy Contract type for this instance, as a Contract's provider
-    // is stored as a class member rather than an instance variable. If we do
-    // not create this proxy type, changing the provider in one instance of
-    // web3-eth would subsequently change the provider for _all_ contract
-    // instances!
-    var self = this;
-    var Contract = function Contract() {
-        BaseContract.apply(this, arguments);
-
-        // when Eth.setProvider is called, call packageInit
-        // on all contract instances instantiated via this Eth
-        // instances. This will update the currentProvider for
-        // the contract instances
-        var _this = this;
-        var setProvider = self.setProvider;
-        self.setProvider = function() {
-          setProvider.apply(self, arguments);
-          core.packageInit(_this, [self.currentProvider]);
-        };
-    };
-
-    Contract.setProvider = function() {
-        BaseContract.setProvider.apply(this, arguments);
-    };
-
-    // make our proxy Contract inherit from web3-eth-contract so that it has all
-    // the right functionality and so that instanceof and friends work properly
-    Contract.prototype = Object.create(BaseContract.prototype);
-    Contract.prototype.constructor = Contract;
-
-    // add contract
-    this.Contract = Contract;
-    this.Contract.defaultAccount = this.defaultAccount;
-    this.Contract.defaultBlock = this.defaultBlock;
-    this.Contract.setProvider(this.currentProvider, this.accounts);
-
-    // add IBAN
-    this.Iban = Iban;
-
-    // add ABI
-    this.abi = abi;
-
-    // add ENS
-    this.ens = new ENS(this);
-*/
     var methods = [
         new Method({
             name: 'getNodeInfo',
