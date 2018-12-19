@@ -176,6 +176,12 @@ var MC = function MC() {
             outputFormatter: formatter.outputBlockFormatter
         }),
         new Method({
+            name: 'getShardBlockByHash',
+            call: 'eth_getShardBlockByHash',
+            params: 2,
+            outputFormatter: formatter.outputBlockFormatter
+        }),
+        new Method({
             name: 'getUncle',
             call: uncleCall,
             params: 2,
