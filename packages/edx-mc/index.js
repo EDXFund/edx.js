@@ -249,6 +249,11 @@ var MC = function MC() {
             inputFormatter: [formatter.inputTransactionFormatter]
         }),
         new Method({
+            name: 'sendTestTxs',
+            call: 'eth_sendTestTxs',
+            params: 1
+        }),
+        new Method({
             name: 'sign',
             call: 'eth_sign',
             params: 2,
