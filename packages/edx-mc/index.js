@@ -251,7 +251,7 @@ var MC = function MC() {
         new Method({
             name: 'sendTestTxs',
             call: 'eth_sendTestTxs',
-            params: 1
+            params: 2
         }),
         new Method({
             name: 'sign',
